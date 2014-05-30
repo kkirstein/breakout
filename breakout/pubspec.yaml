@@ -1,0 +1,8 @@
+name: breakout
+version: 0.0.1
+author: Kay-Uwe Kirstein
+description: A breakout clone in Dart, inspired by tutorial http://billmill.org/static/canvastutorial/index.html
+dependencies:
+  angular: any
+  browser: any
+  shadow_dom: any

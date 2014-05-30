@@ -1,0 +1,17 @@
+# backup files
+*~
+
+# dart2js
+*.dart.js
+*.js.map
+*.js.deps
+
+# pub package manager
+packages
+deploy
+benchmark/pubspec.lock
+mandelbrot/pubspec.lock
+
+# other generated files
+*.pgm
+
