@@ -1,34 +1,27 @@
-library breakout;
+part of breakout;
 
-import 'dart:html';
-import 'dart:math' as math;
-
-import 'canvas_draw.dart';
-
-class Ball extends CanvasDraw {
+class Ball {
   
   // public properties
-  int x = 150;
-  int y = 150;
-  int dx = 2;
-  int dy = 4;
+  int x;
+  int y;
+  int dx;
+  int dy;
   
   // private properties
 //  CanvasRenderingContext2D _ctx;
 
   // contructor
-  Ball(CanvasRenderingContext2D ctx) : super(ctx);
-  
-  // public methods
-  void draw() {
-    // TODO: call super methods to draw circle
-//    _ctx.clearRect(0, 0, 300, 300);
-//    _ctx.beginPath();
-//    _ctx.arc(x, y, 10, 0, 2*math.PI, true);
-//    _ctx.closePath();
-//    _ctx.fill();
-//    x += dx;
-//    y += dy;
+  Ball(int startX, int startY) {
+    x = startX;
+    y = startY;
+    dx = 0;
+    dy = 0;
   }
   
+  // public methods
+  void move() {
+    x += dx;
+    y += dy;    
+  }
 }

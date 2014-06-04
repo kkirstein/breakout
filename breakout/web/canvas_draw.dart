@@ -1,17 +1,21 @@
-library breakout;
-
-import 'dart:html';
-import 'dart:math' as math;
+part of breakout;
 
 class CanvasDraw {
   
   // private properties
   CanvasRenderingContext2D _ctx;
-  int _width;
-  int _height;
+  int width;
+  int height;
+  int minX;
+  int maxX;
   
   // constructor
-  CanvasDraw(this._ctx);
+  CanvasDraw(this._ctx) {
+    width = _ctx.canvas.width;
+    height = _ctx.canvas.height;
+    minX = _ctx.canvas.offsetLeft;
+    maxX = minX + width;
+  }
   
   // public methods
   void circle(int x, int y,int r) {
@@ -29,7 +33,7 @@ class CanvasDraw {
   }
 
   void clear() {
-    _ctx.clearRect(0, 0, _width, _height);
+    _ctx.clearRect(0, 0, width, height);
   }
   
   // TODO
