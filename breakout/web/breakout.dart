@@ -66,7 +66,7 @@ class BreakoutController extends CanvasDraw {
 
     // draw bricks
     for (var b in _bricks.getBricks()) {
-      rect(b.x, b.y, b.width, b.height);
+      rect(b.x, b.y, b.width, b.height, b.color);
     }
     
     // check for bricks
@@ -81,6 +81,7 @@ class BreakoutController extends CanvasDraw {
     if (_ball.y+_ball.dy < 0) {
       _ball.dy = -_ball.dy;
     } else if (_ball.y+_ball.dy > height) {
+      // check for paddle
       if (_ball.x > _paddle.x && _ball.x < _paddle.x+_paddle.w) {
         _ball.dy = -_ball.dy; // paddle has been hit
       } else {

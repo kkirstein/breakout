@@ -18,14 +18,24 @@ class CanvasDraw {
   }
   
   // public methods
-  void circle(int x, int y,int r) {
+  void circle(int x, int y,int r, [String color]) {
+    if (color != null) {
+      _ctx.fillStyle = color;
+    } else {
+      _ctx.fillStyle = "#000000";
+    }
     _ctx.beginPath();
     _ctx.arc(x, y, r, 0, math.PI*2, true);
     _ctx.closePath();
     _ctx.fill();
   }
 
-  void rect(int x,int y,int w,int h) {
+  void rect(int x,int y,int w,int h, [String color]) {
+    if (color != null) {
+      _ctx.fillStyle = color;
+    } else {
+      _ctx.fillStyle = "#000000";
+    }
     _ctx.beginPath();
     _ctx.rect(x,y,w,h);
     _ctx.closePath();

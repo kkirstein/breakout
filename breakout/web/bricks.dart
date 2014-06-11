@@ -17,8 +17,10 @@ class BrickCoordinates {
   int width;
   int height;
   
+  String color;
+  
   // constructor
-  BrickCoordinates(this.x, this.y, this.width, this.height) {}
+  BrickCoordinates(this.x, this.y, this.width, this.height, this.color) {}
 }
 
 class Bricks {
@@ -32,11 +34,14 @@ class Bricks {
   int _ncols;
   int _nrows;  
   int _padding;
+  List<String> _colors;
   
   // constructor
   Bricks(this._ncols, this._nrows, this._padding, int canvasWidth) {
     _brickWidth = (canvasWidth~/_ncols) - _padding;
     _brickHeight = 15;
+    
+    _colors = ["#FF1C0A", "#FFFD0A", "#00A308", "#0008DB", "#EB0093"];
     
     _bricks = new List(_ncols * _nrows);
     for (int i=0; i<(_ncols*_nrows); i++) {
@@ -69,7 +74,7 @@ class Bricks {
     for (int i=0; i<_nrows; i++) {
       for (int j=0; j<_ncols; j++) {
         if (!_bricks[j + i*_ncols].isHit) {
-          ll.add(new BrickCoordinates(_getBrickX(j), _getBrickY(i), _brickWidth, _brickHeight));
+          ll.add(new BrickCoordinates(_getBrickX(j), _getBrickY(i), _brickWidth, _brickHeight, _colors[i]));
         }
       }
     }
