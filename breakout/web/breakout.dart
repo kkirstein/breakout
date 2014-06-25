@@ -83,6 +83,8 @@ class BreakoutController extends CanvasDraw {
     } else if (_ball.y+_ball.dy > height) {
       // check for paddle
       if (_ball.x > _paddle.x && _ball.x < _paddle.x+_paddle.w) {
+        // move the ball differently based on where it hit the paddle
+        _ball.dx = (8 * ((_ball.x - (_paddle.x+_paddle.w/2)) / _paddle.w)).toInt();
         _ball.dy = -_ball.dy; // paddle has been hit
       } else {
         // game over
